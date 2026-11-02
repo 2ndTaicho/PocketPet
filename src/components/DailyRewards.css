@@ -1,0 +1,199 @@
+.daily-card {
+  padding: 22px;
+  border: 2px solid #625660;
+  border-radius: 19px;
+  background: #fbfaf7;
+  color: #625660;
+  box-shadow: 4px 5px 0 #B0B3D688;
+}
+
+.daily-title {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.daily-title > svg {
+  color: #92698A;
+  flex-shrink: 0;
+}
+
+.daily-title span {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  font-weight: 900;
+  color: #92698A;
+}
+
+.daily-title h3 {
+  margin: 3px 0 0;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.daily-description {
+  margin: 15px 0;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.daily-streak {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 12px;
+  border: 2px solid #B0B3D6;
+  border-radius: 12px;
+  background: #E0E4E7;
+  font-size: 12px;
+}
+
+.daily-streak svg {
+  color: #92698A;
+}
+
+.daily-streak span {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.daily-prize-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: 17px 0;
+}
+
+.daily-prize {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 91px;
+  padding: 8px 3px;
+  border: 2px solid #B0B3D6;
+  border-radius: 12px;
+  background: #E0E4E788;
+  text-align: center;
+}
+
+.daily-prize.current {
+  border-color: #625660;
+  background: #CB96BA88;
+  box-shadow: 2px 3px 0 #62566044;
+}
+
+.daily-prize:last-child {
+  grid-column: span 2;
+  background: #D0DDC4;
+}
+
+.daily-prize > span {
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .5px;
+}
+
+.daily-prize > svg {
+  color: #92698A;
+}
+
+.daily-prize strong {
+  font-size: 15px;
+}
+
+.daily-prize .daily-check {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #77A39A;
+}
+
+.daily-claim-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  min-height: 46px;
+  padding: 11px;
+  border: 2px solid #625660;
+  border-radius: 12px;
+  background: #CB96BA;
+  color: #514451;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.daily-claim-button:hover:not(:disabled) {
+  background: #B0B3D6;
+}
+
+.daily-claim-button:disabled {
+  cursor: default;
+  background: #D0DDC4;
+}
+
+.daily-footnote {
+  margin: 12px 0 0;
+  font-size: 10px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.personality-card {
+  padding: 18px;
+  border: 2px solid #B0B3D6;
+  border-radius: 15px;
+  background: #E0E4E755;
+  color: #625660;
+}
+
+.personality-heading {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 11px;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.personality-heading svg {
+  color: #92698A;
+}
+
+.personality-name {
+  display: inline-block;
+  padding: 7px 13px;
+  border: 2px solid #625660;
+  border-radius: 30px;
+  background: #D0DDC4;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.personality-card p {
+  font-size: 12px;
+  line-height: 1.7;
+  margin: 12px 0 0;
+}
+
+@media (max-width: 420px) {
+  .daily-card {
+    padding: 15px;
+  }
+
+  .daily-prize-grid {
+    gap: 5px;
+  }
+
+  .daily-prize {
+    min-height: 80px;
+  }
+}

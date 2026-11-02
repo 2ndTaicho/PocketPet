@@ -1,0 +1,210 @@
+@import "./BaseStyles.css";
+
+:root {
+  color-scheme: light;
+}
+
+.pocket-world {
+  overflow-x: clip;
+}
+
+.game-header {
+  flex-wrap: wrap;
+}
+
+.header-actions {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.shop-launch-button,
+.icon-button,
+.room-tab,
+.room-arrow,
+.care-buttons button,
+.pet-switch-button,
+.adopt-more-button,
+.accessory-options button,
+.adoption-card,
+.primary-button,
+.back-button,
+.text-button {
+  cursor: pointer;
+  font-family: inherit;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background-color 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.shop-launch-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 43px;
+  padding: 10px 14px;
+  border: 2px solid var(--ink);
+  border-radius: 13px;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 800;
+  box-shadow: 2px 3px 0 var(--bluebell);
+}
+
+.shop-launch-button:hover,
+.icon-button:hover,
+.room-tab:hover,
+.room-arrow:hover,
+.pet-switch-button:hover,
+.adopt-more-button:hover,
+.accessory-options button:hover,
+.primary-button:hover,
+.back-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 2px 4px 0 var(--mauve);
+}
+
+.shop-launch-button:active,
+.icon-button:active,
+.room-tab:active,
+.room-arrow:active,
+.care-buttons button:active,
+.primary-button:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+.pocket-world :is(
+  button,
+  input,
+  textarea,
+  select,
+  a
+):focus-visible {
+  outline: 3px solid #8056A5;
+  outline-offset: 3px;
+}
+
+.pocket-world button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.pocket-world :is(
+  button,
+  input,
+  textarea,
+  select
+) {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.game-layout > *,
+.room-panel,
+.sidebar,
+.sidebar > div {
+  min-width: 0;
+}
+
+.pet-dialogue p {
+  overflow-wrap: anywhere;
+}
+
+.game-footer {
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .game-header {
+    align-items: flex-start;
+  }
+
+  .header-actions {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .game-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+  }
+
+  .header-actions {
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .shop-launch-button {
+    min-height: 42px;
+    padding: 9px 11px;
+  }
+
+  .game-layout {
+    gap: 16px;
+  }
+
+  .adoption-page {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .pocket-world {
+    padding: 10px;
+  }
+
+  .brand h1 {
+    font-size: 28px;
+  }
+
+  .room-tab {
+    font-size: 8px;
+  }
+
+  .room-navigation {
+    gap: 3px;
+    padding: 6px;
+  }
+
+  .room-scene {
+    height: 350px;
+  }
+
+  .pet-svg {
+    width: 205px;
+    height: 205px;
+  }
+
+  .care-buttons {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .care-buttons button {
+    min-height: 92px;
+  }
+
+  .adoption-page {
+    padding: 15px;
+  }
+
+  .game-footer {
+    font-size: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pocket-world *,
+  .pocket-world *::before,
+  .pocket-world *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

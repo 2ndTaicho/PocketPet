@@ -1,0 +1,304 @@
+.pet-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.pet-body-motion {
+  transform-origin: 170px 255px;
+  animation: pet-breathe 3.6s ease-in-out infinite;
+}
+
+.kitten-head {
+  transform-origin: 170px 205px;
+  animation: pet-head-tilt 5s ease-in-out infinite;
+}
+
+.pet-ground-shadow {
+  transform-origin: 170px 296px;
+  animation: pet-shadow-breathe 3.6s ease-in-out infinite;
+}
+
+.pet-tail {
+  transform-origin: 230px 245px;
+}
+
+.pet-cat-tail {
+  animation: pet-tail-swish 2.8s ease-in-out infinite;
+}
+
+.pet-dog-tail {
+  animation: pet-tail-wag .75s ease-in-out infinite;
+}
+
+.pet-bunny-tail {
+  transform-origin: 238px 265px;
+  animation: pet-tail-puff 2.5s ease-in-out infinite;
+}
+
+.pet-left-ear {
+  transform-origin: 122px 115px;
+}
+
+.pet-right-ear {
+  transform-origin: 218px 115px;
+}
+
+.pet-type-bunny .pet-left-ear {
+  animation: pet-ear-left 4s ease-in-out infinite;
+}
+
+.pet-type-bunny .pet-right-ear {
+  animation: pet-ear-right 4s ease-in-out infinite;
+}
+
+.pet-type-dog .pet-left-ear {
+  animation: pet-dog-ear-left 3.8s ease-in-out infinite;
+}
+
+.pet-type-dog .pet-right-ear {
+  animation: pet-dog-ear-right 3.8s ease-in-out infinite;
+}
+
+.pet-open-eyes {
+  animation: pet-eye-open 5s step-end infinite;
+}
+
+.pet-closed-eyes {
+  opacity: 0;
+  animation: pet-eye-closed 5s step-end infinite;
+}
+
+.pet-cheeks {
+  transform-origin: 170px 181px;
+}
+
+.pet-happy .pet-body-motion {
+  animation: pet-happy-hop .85s ease-in-out infinite;
+}
+
+.pet-happy .kitten-head {
+  animation: pet-happy-head .85s ease-in-out infinite;
+}
+
+.pet-happy .pet-cheeks {
+  animation: pet-blush 1.2s ease-in-out infinite;
+}
+
+.pet-happy .pet-happy-sparkles {
+  transform-origin: 170px 150px;
+  animation: pet-sparkle 1.2s ease-in-out infinite;
+}
+
+.pet-sleeping .pet-body-motion {
+  animation: pet-sleep-breathe 4.2s ease-in-out infinite;
+}
+
+.pet-sleeping .kitten-head {
+  animation: pet-sleep-head 4.2s ease-in-out infinite;
+}
+
+.pet-sleeping .pet-tail {
+  animation-duration: 6s;
+}
+
+.pet-sleep-symbols {
+  animation: pet-dream-float 3s ease-in-out infinite;
+}
+
+@keyframes pet-breathe {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-3px) scale(1.012);
+  }
+}
+
+@keyframes pet-head-tilt {
+  0%, 35%, 100% {
+    transform: rotate(0);
+  }
+  45%, 58% {
+    transform: rotate(-3deg);
+  }
+  70%, 82% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes pet-shadow-breathe {
+  0%, 100% {
+    transform: scaleX(1);
+    opacity: .2;
+  }
+  50% {
+    transform: scaleX(.94);
+    opacity: .13;
+  }
+}
+
+@keyframes pet-tail-swish {
+  0%, 100% {
+    transform: rotate(-7deg);
+  }
+  50% {
+    transform: rotate(9deg);
+  }
+}
+
+@keyframes pet-tail-wag {
+  0%, 100% {
+    transform: rotate(-13deg);
+  }
+  50% {
+    transform: rotate(14deg);
+  }
+}
+
+@keyframes pet-tail-puff {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.09);
+  }
+}
+
+@keyframes pet-ear-left {
+  0%, 70%, 100% {
+    transform: rotate(0);
+  }
+  78%, 88% {
+    transform: rotate(-6deg);
+  }
+}
+
+@keyframes pet-ear-right {
+  0%, 65%, 100% {
+    transform: rotate(0);
+  }
+  75%, 85% {
+    transform: rotate(6deg);
+  }
+}
+
+@keyframes pet-dog-ear-left {
+  0%, 75%, 100% {
+    transform: rotate(0);
+  }
+  85% {
+    transform: rotate(7deg);
+  }
+}
+
+@keyframes pet-dog-ear-right {
+  0%, 70%, 100% {
+    transform: rotate(0);
+  }
+  82% {
+    transform: rotate(-7deg);
+  }
+}
+
+@keyframes pet-eye-open {
+  0%, 91%, 95%, 100% {
+    opacity: 1;
+  }
+  92%, 94% {
+    opacity: 0;
+  }
+}
+
+@keyframes pet-eye-closed {
+  0%, 91%, 95%, 100% {
+    opacity: 0;
+  }
+  92%, 94% {
+    opacity: 1;
+  }
+}
+
+@keyframes pet-happy-hop {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-11px) scale(1.025);
+  }
+}
+
+@keyframes pet-happy-head {
+  0%, 100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes pet-blush {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .55;
+  }
+}
+
+@keyframes pet-sparkle {
+  0%, 100% {
+    opacity: .5;
+    transform: scale(.92);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes pet-sleep-breathe {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(2px) scale(1.018);
+  }
+}
+
+@keyframes pet-sleep-head {
+  0%, 100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(-7deg);
+  }
+}
+
+@keyframes pet-dream-float {
+  0%, 100% {
+    opacity: .5;
+    transform: translateY(4px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-7px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pet-svg *,
+  .pet-svg {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .pet-open-eyes {
+    opacity: 1;
+  }
+
+  .pet-closed-eyes {
+    opacity: 0;
+  }
+}

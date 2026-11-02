@@ -1,0 +1,269 @@
+.shop-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+  border: 2px solid #625660;
+  border-radius: 24px;
+  background: #fbfaf7;
+  box-shadow: 5px 6px 0 #B0B3D688;
+  color: #625660;
+}
+
+.shop-heading {
+  text-align: center;
+  padding: 12px 0 30px;
+}
+
+.shop-eyebrow {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #92698A;
+}
+
+.shop-heading h2 {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: clamp(36px, 5vw, 55px);
+  font-weight: 400;
+  margin: 8px 0;
+}
+
+.shop-heading p {
+  font-size: 14px;
+  margin: 0;
+}
+
+.shop-heading-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.shop-balance {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 17px;
+  background: #D0DDC4;
+  border: 2px solid #625660;
+  border-radius: 30px;
+  font-weight: 900;
+}
+
+.shop-back {
+  padding: 11px 18px;
+  border: 2px solid #625660;
+  border-radius: 30px;
+  background: #E0E4E7;
+  color: #625660;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.shop-section {
+  margin-top: 20px;
+}
+
+.shop-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-weight: 400;
+  font-size: 26px;
+  padding-bottom: 13px;
+  border-bottom: 2px solid #E0E4E7;
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.shop-item {
+  overflow: hidden;
+  border: 2px solid #B0B3D6;
+  border-radius: 18px;
+  background: white;
+}
+
+.shop-item-art {
+  display: grid;
+  place-items: center;
+  height: 145px;
+  background: linear-gradient(145deg, #E0E4E7, #D0DDC4);
+  border-bottom: 2px solid #B0B3D6;
+}
+
+.shop-item:nth-child(2n) .shop-item-art {
+  background: linear-gradient(145deg, #B0B3D6, #CB96BA66);
+}
+
+.shop-item-art span {
+  font-family: Georgia, serif;
+  font-size: 75px;
+  line-height: 1;
+  color: #82617A;
+  text-shadow: 3px 4px #FFFFFF99;
+}
+
+.shop-item-content {
+  padding: 17px;
+}
+
+.shop-item-content h4 {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 22px;
+  font-weight: 400;
+  margin: 0 0 5px;
+}
+
+.shop-item-content p {
+  min-height: 34px;
+  font-size: 12px;
+  margin: 0 0 16px;
+}
+
+.shop-item-button {
+  width: 100%;
+  min-height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px;
+  background: #D0DDC4;
+  color: #51464F;
+  border: 2px solid #625660;
+  border-radius: 11px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.shop-item-button.shop-active {
+  background: #CB96BA88;
+}
+
+.shop-item-button:disabled {
+  background: #E0E4E7;
+  border-color: #B0B3D6;
+  opacity: .7;
+  cursor: not-allowed;
+}
+
+.shop-launch-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 17px;
+  background: #CB96BA;
+  color: #443743;
+  border: 2px solid #625660;
+  border-radius: 13px;
+  font: inherit;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.shop-inventory-note {
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 13px 0 0;
+}
+
+.shop-decor {
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+  font-family: Georgia, serif;
+  filter: drop-shadow(2px 3px 0 #62566055);
+}
+
+.shop-decor-pillow {
+  bottom: 34px;
+  left: 14%;
+  font-size: 62px;
+  color: #CB96BA;
+}
+
+.shop-decor-vase {
+  bottom: 118px;
+  right: 12%;
+  font-size: 65px;
+  color: #77A39A;
+}
+
+.shop-decor-lamp {
+  top: 24px;
+  right: 18%;
+  font-size: 75px;
+  color: #CB96BA;
+}
+
+@media (max-width: 750px) {
+  .shop-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .shop-page {
+    padding: 17px;
+  }
+
+  .shop-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .shop-item-art {
+    height: 115px;
+  }
+}
+
+.room-with-shop {
+  position: relative;
+  overflow: hidden;
+}
+
+.shop-pet-headwear {
+  position: absolute;
+  left: 50%;
+  bottom: 249px;
+  z-index: 6;
+  transform: translateX(-50%);
+  pointer-events: none;
+  font-family: Georgia, serif;
+  font-size: 58px;
+  line-height: 1;
+  color: #CB96BA;
+  text-shadow:
+    -2px -2px #625660,
+    2px -2px #625660,
+    -2px 2px #625660,
+    2px 2px #625660;
+}
+
+.shop-crown {
+  color: #D0DDC4;
+  font-size: 65px;
+}
+
+.shop-hat {
+  color: #CB96BA;
+  font-size: 62px;
+}
+
+@media (max-width: 560px) {
+  .shop-pet-headwear {
+    bottom: 215px;
+    font-size: 48px;
+  }
+}

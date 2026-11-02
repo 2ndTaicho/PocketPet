@@ -1,0 +1,1426 @@
+:root {
+  --mauve: #CB96BA;
+  --bluebell: #B0B3D6;
+  --venus: #E0E4E7;
+  --beryl: #D0DDC4;
+  --duck: #9BBCAC;
+  --forest: #77A39A;
+  --ink: #625660;
+  --paper: #fbfaf7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.pocket-world {
+  min-height: 100vh;
+  padding: 30px;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 10% 15%, #CB96BA33, transparent 35%),
+    radial-gradient(circle at 90% 85%, #77A39A33, transparent 40%),
+    #f2f1f1;
+  font-family: "Nunito", sans-serif;
+}
+
+.game-header,
+.game-layout,
+.game-footer,
+.adoption-page {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.brand-flower {
+  font-size: 42px;
+  color: var(--mauve);
+}
+
+.brand h1 {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 38px;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1;
+}
+
+.brand p {
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin: 8px 0 0;
+  font-weight: 800;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.coin-pill {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-radius: 30px;
+  padding: 11px 17px;
+  box-shadow: 3px 4px 0 var(--duck);
+}
+
+.coin-pill svg {
+  color: var(--forest);
+}
+
+.coin-pill strong {
+  font-size: 17px;
+}
+
+.coin-pill span {
+  font-size: 12px;
+}
+
+.icon-button {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--beryl);
+  color: var(--ink);
+}
+
+.game-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(280px, .8fr);
+  gap: 20px;
+}
+
+.room-panel,
+.sidebar > div {
+  border: 2px solid var(--ink);
+  border-radius: 22px;
+  background: var(--paper);
+  box-shadow: 5px 6px 0 #B0B3D688;
+  overflow: hidden;
+}
+
+.room-topline,
+.sidebar-heading {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 22px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+}
+
+.room-topline {
+  background: var(--beryl);
+  border-bottom: 2px solid var(--ink);
+}
+
+.room-navigation {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px;
+  background: var(--paper);
+  border-bottom: 2px solid var(--ink);
+}
+
+.room-tabs {
+  display: flex;
+  flex: 1;
+  gap: 7px;
+  min-width: 0;
+}
+
+.room-tab,
+.room-arrow {
+  border: 2px solid #B0B3D6;
+  border-radius: 12px;
+  background: #E0E4E777;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.room-tab {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 5px;
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.room-tab.active {
+  background: var(--mauve);
+  border-color: var(--ink);
+  color: #382F39;
+}
+
+.room-arrow {
+  width: 34px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.room-scene {
+  position: relative;
+  height: 450px;
+  overflow: hidden;
+  isolation: isolate;
+  background: #E0E4E7;
+}
+
+.room-wallpaper {
+  position: absolute;
+  inset: 0 0 28%;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0 55px,
+    #9BBCAC22 56px,
+    transparent 58px
+  );
+}
+
+.room-floor {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 28%;
+  background: repeating-linear-gradient(
+    0deg,
+    #D0DDC4,
+    #D0DDC4 40px,
+    #9BBCAC55 42px,
+    #D0DDC4 44px
+  );
+  border-top: 8px solid var(--duck);
+  z-index: 1;
+}
+
+.room-living {
+  background: #E0E4E7;
+}
+
+.window {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 235px;
+  height: 230px;
+  border: 10px solid var(--forest);
+  border-radius: 110px 110px 12px 12px;
+  overflow: hidden;
+  background: var(--bluebell);
+  box-shadow: 0 0 0 4px var(--duck);
+}
+
+.window-sky {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(#B0B3D6, #E0E4E7);
+  overflow: hidden;
+}
+
+.sun {
+  position: absolute;
+  top: 38px;
+  right: 35px;
+  width: 55px;
+  height: 55px;
+  background: #f5f2e8;
+  border-radius: 50%;
+}
+
+.hill {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.hill-back {
+  width: 280px;
+  height: 120px;
+  bottom: -35px;
+  left: -80px;
+  background: var(--duck);
+}
+
+.hill-front {
+  width: 240px;
+  height: 120px;
+  bottom: -60px;
+  right: -90px;
+  background: var(--forest);
+}
+
+.window-cross {
+  position: absolute;
+  background: var(--forest);
+}
+
+.window-cross.vertical {
+  height: 100%;
+  width: 9px;
+  left: calc(50% - 4px);
+}
+
+.window-cross.horizontal {
+  height: 9px;
+  width: 100%;
+  top: 55%;
+}
+
+.curtain {
+  position: absolute;
+  top: 15px;
+  height: 250px;
+  width: 110px;
+  background: repeating-linear-gradient(
+    90deg,
+    #CB96BA,
+    #CB96BA 16px,
+    #B0B3D6 18px,
+    #CB96BA 22px
+  );
+  border-radius: 10px 10px 60px 20px;
+  opacity: .8;
+}
+
+.curtain-left {
+  left: calc(50% - 185px);
+  transform: rotate(8deg);
+}
+
+.curtain-right {
+  right: calc(50% - 185px);
+  transform: rotate(-8deg) scaleX(-1);
+}
+
+.wall-frame {
+  position: absolute;
+  left: 8%;
+  top: 70px;
+  width: 80px;
+  height: 100px;
+  border: 8px solid var(--forest);
+  border-radius: 40px 40px 8px 8px;
+  display: grid;
+  place-items: center;
+  background: var(--beryl);
+}
+
+.wall-frame span {
+  font-size: 46px;
+  color: var(--mauve);
+}
+
+.plant {
+  position: absolute;
+  right: 8%;
+  bottom: 110px;
+  width: 90px;
+  height: 140px;
+}
+
+.plant-leaf {
+  position: absolute;
+  background: var(--forest);
+  width: 29px;
+  height: 75px;
+  border-radius: 100% 0 100% 0;
+  bottom: 43px;
+  left: 30px;
+}
+
+.leaf-one {
+  transform: rotate(-37deg);
+}
+
+.leaf-two {
+  transform: rotate(20deg);
+  background: var(--duck);
+}
+
+.leaf-three {
+  transform: rotate(55deg);
+  background: var(--beryl);
+}
+
+.plant-pot {
+  position: absolute;
+  width: 65px;
+  height: 50px;
+  bottom: 0;
+  left: 13px;
+  background: var(--mauve);
+  border: 3px solid var(--ink);
+  border-radius: 5px 5px 20px 20px;
+}
+
+.room-kitchen {
+  background: #D0DDC4;
+}
+
+.room-kitchen .room-wallpaper {
+  background-image:
+    linear-gradient(#9BBCAC44 2px, transparent 2px),
+    linear-gradient(90deg, #9BBCAC44 2px, transparent 2px);
+  background-size: 48px 48px;
+}
+
+.kitchen-shelf {
+  position: absolute;
+  left: 9%;
+  top: 75px;
+  width: 180px;
+  height: 13px;
+  border: 3px solid var(--ink);
+  border-radius: 5px;
+  background: var(--forest);
+}
+
+.shelf-cup {
+  position: absolute;
+  bottom: 10px;
+  width: 33px;
+  height: 35px;
+  border: 3px solid var(--ink);
+  border-radius: 5px 5px 12px 12px;
+  background: var(--mauve);
+}
+
+.shelf-cup:first-child {
+  left: 17px;
+}
+
+.shelf-cup:nth-child(2) {
+  left: 62px;
+  background: var(--bluebell);
+}
+
+.shelf-jar {
+  position: absolute;
+  left: 116px;
+  bottom: 10px;
+  width: 37px;
+  height: 48px;
+  border: 3px solid var(--ink);
+  border-radius: 8px;
+  background: var(--venus);
+}
+
+.kitchen-picture {
+  position: absolute;
+  right: 12%;
+  top: 65px;
+  width: 85px;
+  height: 95px;
+  display: grid;
+  place-items: center;
+  border: 7px solid var(--forest);
+  border-radius: 12px;
+  background: var(--venus);
+  color: var(--mauve);
+  font-size: 45px;
+}
+
+.kitchen-counter {
+  position: absolute;
+  left: 5%;
+  bottom: 100px;
+  width: 210px;
+  height: 110px;
+  display: flex;
+  padding: 12px;
+  gap: 8px;
+  background: var(--duck);
+  border: 4px solid var(--ink);
+  border-radius: 10px;
+}
+
+.counter-top {
+  position: absolute;
+  top: -13px;
+  left: -10px;
+  right: -10px;
+  height: 17px;
+  border: 3px solid var(--ink);
+  border-radius: 6px;
+  background: var(--venus);
+}
+
+.counter-door {
+  flex: 1;
+  border: 3px solid var(--forest);
+  border-radius: 7px;
+  background: var(--beryl);
+}
+
+.food-bowl {
+  position: absolute;
+  right: 11%;
+  bottom: 65px;
+  width: 100px;
+  height: 48px;
+  background: var(--mauve);
+  border: 4px solid var(--ink);
+  border-radius: 10px 10px 45px 45px;
+  z-index: 2;
+}
+
+.food-pieces {
+  position: absolute;
+  top: -17px;
+  width: 100%;
+  text-align: center;
+  color: var(--forest);
+  font-size: 23px;
+  letter-spacing: 2px;
+}
+
+.room-bedroom {
+  background: #B0B3D6;
+}
+
+.room-bedroom .room-wallpaper {
+  background-image: radial-gradient(#E0E4E7 2px, transparent 3px);
+  background-size: 38px 38px;
+}
+
+.bedroom-moon {
+  position: absolute;
+  top: 35px;
+  left: 17%;
+  font-size: 95px;
+  color: var(--venus);
+}
+
+.bedroom-stars {
+  position: absolute;
+  right: 13%;
+  top: 70px;
+  font-size: 35px;
+  color: var(--venus);
+}
+
+.bed {
+  position: absolute;
+  left: 5%;
+  bottom: 95px;
+  width: 260px;
+  height: 130px;
+  z-index: 1;
+}
+
+.bed-headboard {
+  position: absolute;
+  left: 0;
+  top: -20px;
+  width: 260px;
+  height: 105px;
+  border: 5px solid var(--ink);
+  border-radius: 35px 35px 8px 8px;
+  background: var(--mauve);
+}
+
+.bed-pillow {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  width: 100px;
+  height: 60px;
+  border: 4px solid var(--ink);
+  border-radius: 22px;
+  background: var(--venus);
+}
+
+.bed-blanket {
+  position: absolute;
+  bottom: 0;
+  width: 260px;
+  height: 80px;
+  border: 5px solid var(--ink);
+  border-radius: 25px 25px 12px 12px;
+  background: var(--beryl);
+}
+
+.bedroom-lamp {
+  position: absolute;
+  right: 10%;
+  bottom: 125px;
+  width: 75px;
+  height: 140px;
+}
+
+.lamp-shade {
+  width: 75px;
+  height: 65px;
+  border: 4px solid var(--ink);
+  border-radius: 40px 40px 10px 10px;
+  background: var(--venus);
+}
+
+.lamp-stem {
+  width: 10px;
+  height: 70px;
+  margin: auto;
+  background: var(--forest);
+  border: 2px solid var(--ink);
+}
+
+.room-bathroom {
+  background: #E0E4E7;
+}
+
+.room-bathroom .room-wallpaper {
+  background-image:
+    linear-gradient(#9BBCAC55 2px, transparent 2px),
+    linear-gradient(90deg, #9BBCAC55 2px, transparent 2px);
+  background-size: 55px 55px;
+}
+
+.bathroom-mirror {
+  position: absolute;
+  left: 9%;
+  top: 40px;
+  width: 135px;
+  height: 155px;
+  border: 10px solid var(--forest);
+  border-radius: 75px 75px 15px 15px;
+  display: grid;
+  place-items: center;
+  background: var(--bluebell);
+  color: white;
+  font-size: 48px;
+}
+
+.bathroom-shelf {
+  position: absolute;
+  right: 8%;
+  top: 120px;
+  width: 130px;
+  height: 12px;
+  border: 3px solid var(--ink);
+  background: var(--forest);
+  border-radius: 6px;
+}
+
+.bath-bottle {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  width: 33px;
+  height: 54px;
+  border: 3px solid var(--ink);
+  border-radius: 8px;
+  background: var(--mauve);
+}
+
+.bath-bottle:nth-child(2) {
+  left: 68px;
+  height: 42px;
+  background: var(--beryl);
+}
+
+.bathtub {
+  position: absolute;
+  left: 50%;
+  bottom: 65px;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 105px;
+  border: 5px solid var(--ink);
+  border-radius: 15px 15px 85px 85px;
+  background: var(--venus);
+  z-index: 2;
+}
+
+.bath-water {
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  top: 6px;
+  height: 25px;
+  border-radius: 50%;
+  background: var(--bluebell);
+}
+
+.bath-bubbles {
+  position: absolute;
+  top: -55px;
+  left: 25px;
+  color: white;
+  font-size: 46px;
+  letter-spacing: 25px;
+}
+
+.rug {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 310px;
+  height: 90px;
+  border: 6px solid var(--mauve);
+  border-radius: 50%;
+  background: #E0E4E7;
+  box-shadow: inset 0 0 0 8px #CB96BA55;
+  z-index: 2;
+}
+
+.pet-area {
+  position: absolute;
+  bottom: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  z-index: 4;
+}
+
+.pet-svg {
+  width: 270px;
+  height: 270px;
+  animation: pet-breathe 2.4s ease-in-out infinite;
+  transform-origin: center bottom;
+  filter: drop-shadow(0 6px 3px #62566022);
+}
+
+.pet-happy {
+  animation: pet-bounce .65s ease-in-out infinite alternate;
+}
+
+.pet-sleeping {
+  animation: pet-breathe 3.5s ease-in-out infinite;
+}
+
+.pet-nameplate {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 16px;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-radius: 20px;
+  font-weight: 800;
+  font-size: 12px;
+  margin-top: -17px;
+  position: relative;
+}
+
+@keyframes pet-breathe {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.025);
+  }
+}
+
+@keyframes pet-bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-17px) rotate(2deg);
+  }
+}
+
+.pet-dialogue {
+  min-height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #f8f7f4;
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  padding: 12px;
+}
+
+.pet-dialogue span {
+  font-size: 26px;
+  color: var(--mauve);
+}
+
+.pet-dialogue p {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.care-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 20px;
+}
+
+.care-buttons button {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 7px;
+  padding: 13px 8px;
+  background: var(--beryl);
+  border: 2px solid var(--ink);
+  border-radius: 16px;
+  color: var(--ink);
+  transition: .2s;
+}
+
+.care-buttons button:nth-child(2) {
+  background: #CB96BA66;
+}
+
+.care-buttons button:nth-child(3) {
+  background: #B0B3D688;
+}
+
+.care-buttons button:nth-child(4) {
+  background: #9BBCAC88;
+}
+
+.care-buttons button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 0 var(--ink);
+}
+
+.care-icon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+}
+
+.care-buttons strong {
+  font-size: 14px;
+}
+
+.care-buttons small {
+  font-size: 11px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.sidebar-heading {
+  background: var(--duck);
+  border-bottom: 2px solid var(--ink);
+}
+
+.profile-card {
+  text-align: center;
+  padding-bottom: 22px;
+}
+
+.profile-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: 20px auto 10px;
+  font-size: 38px;
+  background: var(--beryl);
+  color: var(--mauve);
+  border: 2px solid var(--ink);
+}
+
+.tiny-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.profile-card h2 {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-weight: 400;
+  font-size: 34px;
+  margin: 8px 0;
+}
+
+.text-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: transparent;
+  border: 0;
+  text-decoration: underline;
+  font-size: 12px;
+  color: var(--ink);
+}
+
+.status-card,
+.accessory-card,
+.pet-collection-card {
+  padding: 22px;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  margin-bottom: 22px;
+}
+
+.card-title svg {
+  color: var(--mauve);
+}
+
+.meter {
+  margin-bottom: 20px;
+}
+
+.meter-heading {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.meter-track {
+  height: 15px;
+  border: 2px solid var(--ink);
+  border-radius: 20px;
+  overflow: hidden;
+  background: #f1f1f1;
+}
+
+.meter-fill {
+  height: 100%;
+  border-radius: 20px;
+  transition: width .35s ease;
+}
+
+.status-note {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 12px;
+  text-align: center;
+  margin: 18px 0 0;
+}
+
+.accessory-card p {
+  font-size: 12px;
+  margin: -8px 0 16px;
+}
+
+.accessory-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.accessory-options button {
+  border: 2px solid #B0B3D6;
+  background: #f8f7f7;
+  border-radius: 13px;
+  padding: 11px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  color: var(--ink);
+}
+
+.accessory-options button.active {
+  border-color: var(--ink);
+  background: var(--beryl);
+}
+
+.accessory-options button span {
+  font-size: 27px;
+}
+
+.accessory-options button small {
+  font-size: 11px;
+}
+
+.memory-card {
+  text-align: center;
+  padding: 25px;
+  background: var(--bluebell) !important;
+}
+
+.memory-card > span {
+  font-size: 10px;
+  letter-spacing: 1.7px;
+  font-weight: 800;
+}
+
+.memory-card strong {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 42px;
+  margin: 10px 0;
+}
+
+.memory-card p {
+  font-size: 12px;
+  margin: 0;
+}
+
+.pet-collection-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.pet-switch-button {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #E0E4E7;
+  border-radius: 13px;
+  background: #f8f7f7;
+  color: var(--ink);
+  text-align: left;
+}
+
+.pet-switch-button.active {
+  border-color: var(--forest);
+  background: #D0DDC477;
+}
+
+.pet-switch-avatar {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--mauve);
+  color: white;
+  font-size: 21px;
+}
+
+.pet-switch-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pet-switch-info strong {
+  font-size: 13px;
+}
+
+.pet-switch-info small {
+  font-size: 11px;
+}
+
+.adopt-more-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 14px;
+  padding: 12px;
+  border: 2px dashed var(--mauve);
+  border-radius: 13px;
+  background: #CB96BA22;
+  color: var(--ink);
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.adoption-page {
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-radius: 25px;
+  padding: 35px;
+  box-shadow: 5px 6px 0 #B0B3D688;
+}
+
+.adoption-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.eyebrow {
+  display: block;
+  color: #956D8B;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 900;
+}
+
+.adoption-heading h2 {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: clamp(30px, 5vw, 52px);
+  font-weight: 400;
+  margin: 12px 0;
+}
+
+.adoption-heading p {
+  max-width: 450px;
+  margin: 0 auto;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding: 9px 12px;
+  border: 1px solid var(--ink);
+  border-radius: 10px;
+  background: var(--beryl);
+  color: var(--ink);
+}
+
+.adoption-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.adoption-card {
+  overflow: hidden;
+  padding: 0;
+  border: 2px solid #B0B3D6;
+  border-radius: 20px;
+  background: #fff;
+  color: var(--ink);
+  text-align: left;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.adoption-card:hover {
+  transform: translateY(-5px);
+}
+
+.adoption-card.selected {
+  border-color: var(--ink);
+  box-shadow: 5px 6px 0 var(--mauve);
+}
+
+.adoption-pet-art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 240px;
+  overflow: hidden;
+  background: linear-gradient(#E0E4E7, #D0DDC4);
+}
+
+.adoption-card:nth-child(2) .adoption-pet-art {
+  background: linear-gradient(#D0DDC4, #E0E4E7);
+}
+
+.adoption-card:nth-child(3) .adoption-pet-art {
+  background: linear-gradient(#B0B3D6, #E0E4E7);
+}
+
+.adoption-pet-art .pet-svg {
+  width: 215px;
+  height: 215px;
+}
+
+.adoption-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 17px;
+}
+
+.adoption-card-bottom h3 {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 25px;
+  font-weight: 400;
+  margin: 0 0 5px;
+}
+
+.adoption-card-bottom p {
+  font-size: 11px;
+  margin: 0;
+}
+
+.adoption-check {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--paper);
+}
+
+.adoption-card.selected .adoption-check {
+  background: var(--beryl);
+}
+
+.adoption-form {
+  max-width: 600px;
+  margin: 35px auto 0;
+  padding: 25px;
+  border: 2px solid var(--ink);
+  border-radius: 20px;
+  background: #CB96BA22;
+}
+
+.adoption-form label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.adoption-form-row {
+  display: flex;
+  gap: 10px;
+}
+
+.adoption-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 13px 15px;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  background: white;
+  color: var(--ink);
+  font: inherit;
+}
+
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 20px;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  background: var(--beryl);
+  color: var(--ink);
+  font-weight: 900;
+}
+
+.game-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  margin-top: 30px;
+  padding: 15px 0;
+  border-top: 1px solid var(--ink);
+}
+
+@media (max-width: 900px) {
+  .game-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .adoption-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .adoption-pet-art {
+    height: 190px;
+  }
+
+  .adoption-pet-art .pet-svg {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 560px) {
+  .pocket-world {
+    padding: 15px;
+  }
+
+  .brand h1 {
+    font-size: 29px;
+  }
+
+  .brand p {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .brand-flower {
+    font-size: 30px;
+  }
+
+  .coin-pill {
+    padding: 8px 10px;
+  }
+
+  .coin-pill span {
+    display: none;
+  }
+
+  .room-scene {
+    height: 390px;
+  }
+
+  .pet-svg {
+    width: 230px;
+    height: 230px;
+  }
+
+  .pet-area {
+    bottom: 30px;
+  }
+
+  .window {
+    width: 180px;
+    height: 205px;
+  }
+
+  .curtain-left {
+    left: calc(50% - 148px);
+  }
+
+  .curtain-right {
+    right: calc(50% - 148px);
+  }
+
+  .wall-frame {
+    width: 45px;
+    height: 65px;
+    left: 3%;
+  }
+
+  .wall-frame span {
+    font-size: 27px;
+  }
+
+  .plant {
+    right: 0;
+    transform: scale(.7);
+    transform-origin: bottom right;
+  }
+
+  .rug {
+    width: 260px;
+  }
+
+  .room-navigation {
+    gap: 4px;
+    padding: 8px;
+  }
+
+  .room-tabs {
+    gap: 4px;
+  }
+
+  .room-tab {
+    flex-direction: column;
+    gap: 4px;
+    font-size: 9px;
+    padding: 8px 2px;
+  }
+
+  .room-tab svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .room-arrow {
+    width: 25px;
+  }
+
+  .care-buttons {
+    gap: 6px;
+    padding: 12px;
+  }
+
+  .care-buttons button {
+    padding: 10px 3px;
+  }
+
+  .care-buttons strong {
+    font-size: 12px;
+  }
+
+  .care-buttons small {
+    font-size: 9px;
+  }
+
+  .sidebar {
+    grid-template-columns: 1fr;
+  }
+
+  .adoption-page {
+    padding: 20px;
+  }
+
+  .adoption-form {
+    padding: 18px;
+  }
+
+  .adoption-form-row {
+    flex-direction: column;
+  }
+
+  .game-footer {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .game-footer span:first-child,
+  .game-footer span:last-child {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pet-svg {
+    animation: none;
+  }
+
+  .care-buttons button,
+  .adoption-card {
+    transition: none;
+  }
+}
